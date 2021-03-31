@@ -1,0 +1,10 @@
+.registrate p {
+    font-size: 14px;
+    color: rgb(131, 132, 241);
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.text-left {
+    text-align: left !important;
+}

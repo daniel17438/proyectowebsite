@@ -1,0 +1,35 @@
+.card {
+    display: inline-block;
+    margin: 5px;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 300px;
+    max-height: 500px;
+    min-height: 430px;
+    opacity: .8;
+}
+
+.card:hover {
+    opacity: .9;
+}
+
+.tamano-Imagen {
+    max-height: 200px;
+    max-width: 300px;
+    min-height: 200px;
+}
+
+.centrar {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.bajar {
+    position: absolute;
+    bottom: 10px;
+    width: 90%;
+}
+
+.container {
+    margin-top: 80px !important;
+}

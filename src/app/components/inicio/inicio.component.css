@@ -1,0 +1,87 @@
+.container-inicio {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* background-color: #e4eee9;
+    background-color: #ffcdb2;
+    background-color: #af8c9d; */
+    /* background: linear-gradient(to right, #27303a 0%, #212121 100%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.caja-formulario {
+    max-width: 400px;
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 1px 0px 10px 2px rgba(106, 109, 115, 0.39);
+    -webkit-box-shadow: 1px 0px 10px 2px rgba(106, 109, 115, 0.39);
+    -moz-box-shadow: 1px 0px 10px 2px rgba(106, 109, 115, 0.39);
+}
+
+@media screen and (max-width: 768px) {
+    .caja-formulario {
+        width: 90%;
+    }
+    .container-inicio {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+.bienvenida {
+    display: flex;
+    height: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.registrate p {
+    font-size: 14px;
+    color: rgb(17, 20, 225);
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-primary {
+    margin-top: 40px;
+}
+
+.pelispro-estilo {
+    font-family: 'Ultra', serif;
+    font-size: 30px;
+}
+
+.img-fluid {
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+.titulo-login {
+    margin: 91px 0 36px;
+}
+
+.campo-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.has-danger {
+    border: 1px solid rgb(255, 1, 1);
+}
+
+.altura-formulario-registro {
+    height: 580px;
+}

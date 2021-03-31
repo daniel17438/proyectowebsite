@@ -1,0 +1,34 @@
+.card {
+    display: inline-block;
+    margin: 5px;
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 300px;
+    max-height: 500px;
+    min-height: 430px;
+    opacity: .9;
+}
+
+.card:hover {
+    opacity: 1;
+    box-shadow: 1px 0px 10px 2px rgba(106, 109, 115, 0.39);
+    -webkit-box-shadow: 1px 0px 10px 2px rgba(106, 109, 115, 0.39);
+    -moz-box-shadow: 1px 0px 10px 2px rgba(106, 109, 115, 0.39);
+}
+
+.tamano-Imagen {
+    max-height: 200px;
+    max-width: 300px;
+    min-height: 200px;
+}
+
+.centrar {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.bajar {
+    position: absolute;
+    bottom: 10px;
+    width: 90%;
+}

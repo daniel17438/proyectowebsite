@@ -1,0 +1,110 @@
+<div class="container-inicio">
+
+    <div class="caja-formulario" [ngClass]="{ 'altura-formulario-registro': registro}">
+        <div *ngIf="bienvenido" class="bienvenida">
+            <h4 class="text-primary">Bienvenidos a <br><span class="pelispro-estilo">PelisPro</span> </h4>
+
+
+            <div class="opcion">
+                <img src="/assets/img/inicio4.jpg" alt="" width="200" height="200">
+            </div>
+            <button (click)="bienvenido=false; login=true" class="btn btn-primary w-50">Entrar</button>
+        </div>
+        <div *ngIf="login" class="login">
+            <div class="container">
+                <form [formGroup]="formG">
+                    <div>
+
+
+                        <div class="container">
+                            <img class="logo-pelispro " src="/assets/img/inicioPrincipal.png" class="img-fluid " alt="" width="50" height="50">
+                            <h3 class="t-login">login</h3>
+                        </div>
+
+                    </div>
+                    <div class="mb-3 text-left">
+                        <label for="exampleInputEmail1" class="form-label ">Ingrese su correo</label>
+                        <input id="correo" class=" form-control" name="correo" formControlName="correo" type="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+                        <div class="campo-error" *ngIf="formG.controls.correo.errors && formG.controls.correo.errors.required && (formG.controls.correo.dirty || formG.controls.correo.touched)">
+                            Campo Requerido</div>
+                        <div class="campo-error" *ngIf="formG.controls.correo.errors && formG.controls.correo.errors.pattern && (formG.controls.correo.dirty || formG.controls.correo.touched)">
+                            Debe introducir una direccion e correo valida</div>
+                    </div>
+                    <div class="mb-3 text-left">
+                        <label for="exampleInputPassword1" class="form-label">Ingrese su contraseña</label>
+                        <input id="pws" class="text-dark form-control" type="password" name="pws" formControlName="pws" required>
+                        <div class="campo-error" *ngIf="formG.controls?.pws?.errors && formG.controls?.pws?.errors.required && (formG.controls?.pws?.dirty || formG.controls?.pws?.touched)">
+                            Campo Requerido</div>
+                        <div class="campo-error" *ngIf="formG.controls?.pws?.errors && formG.controls?.pws?.errors.minlength && (formG.controls?.pws?.dirty || formG.controls?.pws?.touched)">
+                            Minimo 6 caracteres</div>
+                    </div>
+
+
+                    <button (click)="onSubmit()" type="button" class="btn btn-primary w-50" [disabled]="!formG.valid">Login</button>
+                    <a (keyup.enter)="onSubmit()" href=""></a>
+                    <div class="registrate">
+                        <p (click)="login=false; registro=true">¿Aun no tienes cuenta? Registrate</p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div *ngIf="registro" class="registro">
+            <div class="container">
+                <form #forma="ngForm" novalidate="">
+                    <h4 class="mb-4">Registrate</h4>
+                    <div class="text-left mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Ingrese sus nombre y apellidos</label>
+                        <input [ngClass]="{ 'has-danger': (nombre.errors?.minlength || nombre.errors?.required)&& nombre.touched }" type="text" [(ngModel)]="usuarioRegistro.nombre" name="name" class="form-control" minlength="3" required #nombre="ngModel">
+                        <div class="campo-error" *ngIf="nombre.errors?.required">
+                            Este campo es requerido.
+                        </div>
+                        <div class="campo-error" *ngIf="nombre.errors?.minlength">
+                            Por lo menos {{ nombre.errors.minlength.requiredLength }} caracteres.
+                        </div>
+                    </div>
+
+                    <div class="text-left mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Ingrese su correo</label>
+                        <input [ngClass]="{ 'has-danger': (correo.errors?.minlength || correo.errors?.required)&& correo.touched }" type="email" [(ngModel)]="usuarioRegistro.email" name="email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #correo="ngModel">
+
+                        <div class="campo-error" *ngIf="correo.errors?.required">
+                            Este campo es requerido.
+                        </div>
+                        <div class="campo-error" *ngIf="correo.errors?.pattern">
+                            El campo no tiene formato de correo
+                        </div>
+
+
+                    </div>
+
+                    <div class="text-left mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Ingrese su nueva contraseña</label>
+                        <input [ngClass]="{ 'has-danger': (password1.errors?.minlength || password1.errors?.required)&& password1.touched }" type="password" [(ngModel)]="usuarioRegistro.password1" name="password1" class="form-control" minlength="6" required #password1="ngModel">
+                        <div class="campo-error" *ngIf="password1.errors?.required">
+                            Este campo es requerido.
+                        </div>
+                        <div class="campo-error" *ngIf="password1.errors?.minlength">
+                            Por lo menos {{ password1.errors.minlength.requiredLength }} caracteres.
+                        </div>
+                    </div>
+
+                    <div class="text-left mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Repita su nueva contraseña</label>
+                        <input [ngClass]="{ 'has-danger': (password2.errors?.minlength || password2.errors?.required)&& password2.touched }" type="password" [(ngModel)]="usuarioRegistro.password2" name="password2" class="form-control" minlength="6" required #password2="ngModel">
+                        <div class="campo-error" *ngIf="password2.errors?.required">
+                            Este campo es requerido.
+                        </div>
+                        <div class="campo-error" *ngIf="password2.errors?.minlength">
+                            Por lo menos {{ password2.errors.minlength.requiredLength }} caracteres.
+                        </div>
+                    </div>
+
+                    <button (click)="registrar()" type="button" class="btn btn-primary w-50" [disabled]="!forma.valid">Registrar</button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

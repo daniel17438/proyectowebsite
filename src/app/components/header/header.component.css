@@ -1,0 +1,43 @@
+.container-header {
+    width: 100%;
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    background: rgb(255, 242, 236);
+}
+
+.container-links {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+}
+
+.link {
+    margin-right: 8px;
+    border: 1px solid #f59797;
+    padding: 10px;
+    background: rgba(243, 188, 158, 0.864);
+    border-radius: 15px;
+}
+
+.link:last-child {
+    margin-right: 0;
+}
+
+.container-logo {
+    font-family: 'Bungee', cursive;
+    font-size: 25px;
+    display: flex;
+}
+
+.container-links img {
+    width: 30px;
+    height: 30px;
+    margin-top: 35px;
+}

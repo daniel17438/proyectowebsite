@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fondo-cabecera">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/assets/img/inicioPrincipal.png" alt="" width="40" height="34">
+        </a>
+        <a class="navbar-brand text-dark" routerLink="cartelera">PelisPro</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item text-primary">
+                    <a class="nav-link" (click)="authService.logout()">Logout</a>
+                </li>
+                <li class="nav-item text-primary">
+                    <a class="nav-link" routerLink="auth/about">About</a>
+                </li>
+                <li class="nav-item text-primary">
+                    <a class="nav-link" routerLink="auth/acerca-de">Contacto</a>
+                </li>
+
+            </ul>
+            <form class="d-flex">
+
+                <input type="text" class="form-control text-center " placeholder="Buscar peliculas" [(ngModel)]="buscar" name="buscar" (keyup.enter)="buscarPeliculas()">
+
+                <button (click)="buscarPeliculas()" class="btn btn-outline-light" type="button">Buscar</button>
+                <a (keyup.enter)="buscarPeliculas()" href=""></a>
+            </form>
+        </div>
+    </div>
+</nav>
+<div *ngIf="noEncontrado" class="alert alert-danger">No se encontraron peliculas</div>
+<app-pelicula *ngIf="peliculas?.length > 0" [pasar]="peliculas"></app-pelicula>

@@ -1,0 +1,11 @@
+<div class="centrar">
+    <div *ngFor="let peliculas of servicios.cartelera; let i = index" class="card" style="width: 18rem;">
+        <img [src]="peliculas | imagen:true" class="card-img-top tamano-Imagen" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{peliculas.original_title}}</h5>
+            <p *ngIf="peliculas.overview.length > 0" class="card-text">{{peliculas.overview | slice:0:100}}... </p>
+            <p *ngIf="peliculas.overview.length == 0" class="card-text"> <img src="assets/img/mensaje.ico" alt=""> Disculpe... <br><br> Aun no hemos agregado descripcion para este contenido... </p>
+            <button [routerLink]="['/buscador', peliculas.id]" class="btn btn-primary d-block bajar">Ver mas...</button>
+        </div>
+    </div>
+</div>

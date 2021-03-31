@@ -1,0 +1,19 @@
+<div *ngIf="!servi.userLogg ">
+    <app-inicio></app-inicio>
+</div>
+<div *ngIf="servi.userLogg">
+    <app-navbar></app-navbar>
+    <div class="container ajustar-margen">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<div *ngIf="servi.loading" class="loaderContainer">
+    <div class="showContent">
+        <div class="lds-default">
+            <img src="assets/img/loading.gif" alt="">
+        </div>
+        <!--<div class="cargando-img"></div>-->
+        <p class="cargando-texto"></p>
+    </div>
+</div>

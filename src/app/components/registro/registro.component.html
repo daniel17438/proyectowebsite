@@ -1,0 +1,33 @@
+<div class="container">
+    <form>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Ingrese sus nombre y apellidos</label>
+            <input type="text" [(ngModel)]="usuario.nombre" name="name" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Ingrese su correo</label>
+            <input type="email" [(ngModel)]="usuario.email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Ingrese su nueva contraseña</label>
+            <input type="password" [(ngModel)]="usuario.password1" name="password" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Repita su nueva contraseña</label>
+            <input type="password" [(ngModel)]="usuario.password2" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" [(ngModel)]="usuario.recordar" name="check" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Recordar datos</label>
+        </div>
+
+        <button (click)="registrar()" type="button" class="btn btn-primary">Submit</button>
+        <a (keyup.enter)="registrar()" href=""></a>
+    </form>
+</div>

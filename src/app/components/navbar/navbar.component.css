@@ -1,0 +1,54 @@
+.btn {
+    margin-left: 10px;
+}
+
+.form-control {
+    max-height: 50px;
+}
+
+
+/* .fondo-cabecera{
+   background-image:  ;
+} */
+
+.nav-link {
+    cursor: pointer;
+}
+
+.bg-primary {
+    background-color: #ffffff !important;
+    box-shadow: 1px 0px 10px 2px rgba(106, 109, 115, 0.39);
+    -webkit-box-shadow: 1px 0px 10px 2px rgba(106, 109, 115, 0.39);
+    -moz-box-shadow: 1px 0px 10px 2px rgba(106, 109, 115, 0.39);
+}
+
+.text-primary a {
+    font-family: 'Candal', sans-serif !important;
+    color: #ffffff;
+}
+
+.text-dark {
+    font-family: 'Candal', sans-serif !important;
+    color: #ffffff !important;
+}
+
+.text-primary a:hover {
+    text-decoration: underline;
+    color: rgb(29, 153, 211) !important;
+}
+
+.text-dark:hover {
+    text-decoration: underline;
+    color: rgb(29, 153, 211) !important;
+}
+
+.navbar-dark {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.navbar {
+    position: fixed !important;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+}

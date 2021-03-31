@@ -1,0 +1,24 @@
+<div class="container">
+    <form>
+
+        <div>
+            <h4 class="my-5">Login</h4>
+        </div>
+        <div class="mb-3 text-left">
+            <label for="exampleInputEmail1" class="form-label ">Ingrese su correo</label>
+            <input type="email" [(ngModel)]="usuario.email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3 text-left">
+            <label for="exampleInputPassword1" class="form-label">Ingrese su contraseña</label>
+            <input type="password" [(ngModel)]="usuario.password" name="password" class="form-control" id="exampleInputPassword1">
+
+        </div>
+
+        <button (click)="login()" type="button" class="btn btn-primary w-50">Login</button>
+        <a (keyup.enter)="login()" href=""></a>
+        <div class="registrate">
+            <p>¿Aun no tienes cuenta? Registrate</p>
+        </div>
+    </form>
+</div>
